@@ -1,6 +1,5 @@
 "use client"
 import Image from "next/image";
-import { Input } from "@nextui-org/input";
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
 import MapsUgcOutlinedIcon from '@mui/icons-material/MapsUgcOutlined';

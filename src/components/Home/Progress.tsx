@@ -37,7 +37,7 @@ export default function CircularWithValueLabel() {
   const [progress, setProgress] = React.useState(0);
 
   React.useEffect(() => {
-    const timer = setInterval(() => {
+    setInterval(() => {
       setProgress((prevProgress) => (prevProgress >= 25 ? 25 : prevProgress + 1));
     }, 10);
     // return () => {

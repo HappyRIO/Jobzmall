@@ -2,21 +2,18 @@
 import React from 'react';
 import Image from "next/image";
 import Header from "@/components/Header/Header";
-import PrimarySearchAppBar from "@/components/Header/Header1";
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import Avatar from '@mui/material/Avatar';
 import AvatarGroup from '@mui/material/AvatarGroup';
-import Stack from '@mui/material/Stack';
-import CircularProgress from '@mui/material/CircularProgress';
 
 import Story from "@/components/Home/Story";
 import CircularWithValueLabel from '@/components/Home/Progress';
 
 export default function Home() {
-  const [progress, setProgress] = React.useState(0);
+  const [ , setProgress] = React.useState(0);
 
   React.useEffect(() => {
-    const timer = setInterval(() => {
+    setInterval(() => {
       setProgress((prevProgress) => (prevProgress >= 25 ? 25 : prevProgress + 1));
     }, 10);
 
@@ -75,7 +72,7 @@ export default function Home() {
               <div className="flex bg-gray-900 p-6 rounded-xl mt-6">
                 <div className="flex flex-col w-1/2">
                   <div className="text-white font-medium text-xl">Need a career companion?</div>
-                  <div className="text-gray-300 text-sm">Our coached will guide you through every step and help you find a job you love. Let's build your career together.</div>
+                  <div className="text-gray-300 text-sm">Our coached will guide you through every step and help you find a job you love. Let&apos;s build your career together.</div>
                   <button className="bg-white text-gray-900 text-semibold text-sm w-fit px-4 py-2.5 mt-6 cursor-pointer rounded-md">Connect with a Coach →</button>
                 </div>
                 <div className="flex justify-center items-center w-1/2">
@@ -90,7 +87,7 @@ export default function Home() {
               <div className="flex flex-col mb-4">
                 <div className="flex flex-col items-center">
                   <h2 className="h-[48px] w-full text-center bg-gradient-to-r from-fuchsia-400 via-violet-400 to-purple-500 bg-clip-text text-transparent max-w-2xl text-4xl font-medium tracking-tight "> Inspire and Be Inspired </h2>
-                  <p className="text-center max-w-xl mb-4 text-lg leading-6 ng-tns-c331-582"> Explore the #1 video talent marketplace featuring publicly shared stories. Watch editor-picked video resumes from professionals who've chosen to inspire others with their career journeys. </p>
+                  <p className="text-center max-w-xl mb-4 text-lg leading-6 ng-tns-c331-582"> Explore the #1 video talent marketplace featuring publicly shared stories. Watch editor-picked video resumes from professionals who&apos;ve chosen to inspire others with their career journeys. </p>
                   <a className="flex space-x-1 items-center text-[#9333EA] font-semibold dark:text-primary-400 hover:underline text-center text-base" href="/video-resume-studio/questionnaire"><span className="">Share Your Story →</span></a>
                 </div>
               </div>
