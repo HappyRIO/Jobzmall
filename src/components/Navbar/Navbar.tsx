@@ -1,24 +1,16 @@
 "use client"
 import * as React from 'react';
+import { useRouter } from 'next/navigation'
+
 import { styled, Theme, CSSObject } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import MuiDrawer from '@mui/material/Drawer';
-// import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
-// import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
-// import CssBaseline from '@mui/material/CssBaseline';
-// import Typography from '@mui/material/Typography';
-// import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
-// import MenuIcon from '@mui/icons-material/Menu';
-// import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-// import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-// import InboxIcon from '@mui/icons-material/MoveToInbox';
-// import MailIcon from '@mui/icons-material/Mail';
 import InboxOutlinedIcon from '@mui/icons-material/InboxOutlined';
 import BusinessCenterOutlinedIcon from '@mui/icons-material/BusinessCenterOutlined';
 import VideocamOutlinedIcon from '@mui/icons-material/VideocamOutlined';
@@ -112,43 +104,18 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 );
 
 export default function MiniDrawer() {
-  // const theme = useTheme();
+  const router = useRouter();
   const [open, setOpen] = React.useState(false);
 
-  // const handleDrawerOpen = () => {
-  //   setOpen(true);
-  // };
 
   const handleDrawerClose = () => {
     setOpen(false);
   };
 
   return (
-    <Box sx={{ display: 'flex', width: '80px' }}>
-      {/* <CssBaseline /> */}
-      {/* <AppBar position="fixed" open={open}>
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            edge="start"
-            sx={[
-              {
-                marginRight: 5,
-              },
-              open && { display: 'none' },
-            ]}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            Mini variant drawer
-          </Typography>
-        </Toolbar>
-      </AppBar> */}
-      <Drawer sx={{ width: '80px' }} variant="permanent" open={open}>
-        <DrawerHeader sx={{ width: '80px' }}>
+    <Box sx={{ display: 'flex', width: 80 }}>
+      <Drawer sx={{ width: 80 }} variant="permanent" open={open}>
+        <DrawerHeader sx={{ width: 80 }}>
           <IconButton onClick={handleDrawerClose}>
             {/* {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />} */}
           </IconButton>
@@ -161,6 +128,7 @@ export default function MiniDrawer() {
                 sx={[
                   {
                     minHeight: 48,
+                    minWidth: 80,
                     px: 2.5,
                   },
                   open
@@ -187,12 +155,12 @@ export default function MiniDrawer() {
                         },
                   ]}
                 >
-                  {index == 0 && <InboxOutlinedIcon />}
-                  {index == 1 && <BusinessCenterOutlinedIcon />}
-                  {index == 2 && <VideocamOutlinedIcon />}
-                  {index == 3 && <EditOutlinedIcon />}
-                  {index == 4 && <PeopleAltOutlinedIcon />}
-                  {index == 5 && <EventOutlinedIcon />}
+                  {index == 0 && <div onClick={()=> router.push('/Home')}><InboxOutlinedIcon /></div>}
+                  {index == 1 && <div onClick={()=> router.push('/Jobs')}><BusinessCenterOutlinedIcon /></div>}
+                  {index == 2 && <div onClick={()=> router.push('/Video-resume-studio/questionnaire')}><VideocamOutlinedIcon /></div>}
+                  {index == 3 && <div onClick={()=> router.push('/My-resumes')}><EditOutlinedIcon /></div>}
+                  {index == 4 && <div onClick={()=> router.push('/Genius')}><PeopleAltOutlinedIcon /></div>}
+                  {index == 5 && <div onClick={()=> router.push('/Calendar')}><EventOutlinedIcon /></div>}
                   {index == 6 && <WidgetsOutlinedIcon />}
                 </ListItemIcon>
                 <ListItemText

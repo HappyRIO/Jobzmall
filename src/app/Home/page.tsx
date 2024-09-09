@@ -67,6 +67,7 @@ export default function Home() {
                 <div className="flex w-[200px] h-full items-center justify-center">
                   <div className='absolute rounded-full border-8 w-20 h-20 border-[#6b21a8]'></div>
                   <CircularWithValueLabel/>
+                  {/* <CircularProgressCountUp/> */}
                 </div>
               </div>
               <div className="flex bg-gray-900 p-6 rounded-xl mt-6">
@@ -77,9 +78,9 @@ export default function Home() {
                 </div>
                 <div className="flex justify-center items-center w-1/2">
                   <AvatarGroup max={3}>
-                    <Avatar sx={{ width: 80, height: 80, border: '5 !important', borderColor: 'black !important' }} alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
-                    <Avatar sx={{ width: 80, height: 80, borderWidth: 4, borderColor: 'black !important' }} alt="Travis Howard" src="/static/images/avatar/2.jpg" />
-                    <Avatar sx={{ width: 80, height: 80, borderColor: 'black !important'}} alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
+                    <Avatar sx={{ width: 80, height: 80, border: '5 !important', borderColor: 'black !important' }} alt="Remy Sharp" src="/image/avatar/hugo.png" />
+                    <Avatar sx={{ width: 80, height: 80, borderWidth: 4, borderColor: 'black !important' }} alt="Travis Howard" src="/image/avatar/ashley.png" />
+                    <Avatar sx={{ width: 80, height: 80, borderColor: 'black !important'}} alt="Cindy Baker" src="/image/avatar/coach.png" />
                   </AvatarGroup>
                 </div>
               </div>
