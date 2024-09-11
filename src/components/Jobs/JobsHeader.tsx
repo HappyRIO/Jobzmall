@@ -20,7 +20,6 @@ import MapsUgcOutlinedIcon from '@mui/icons-material/MapsUgcOutlined';
 import Message from "../Header/Message";
 import Notification from "../Header/Notification";
 import NavTabs from "./Tab";
-import SearchBox from "../Header/SearchBox";
 import SearchJobs from "./SearchJobs";
 import SearchLocation from "./SearchLocation";
 

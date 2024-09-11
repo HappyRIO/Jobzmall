@@ -7,8 +7,8 @@ import { menuList } from '@/data/search';
 
 const SearchBox: React.FC = () => {
     
-    let allSuggestions:string[] = [];
-    let allDescriptions:string[] = [];
+    const allSuggestions:string[] = [];
+    const allDescriptions:string[] = [];
     menuList.map((item) => {
         allSuggestions.push(item.title)
         allDescriptions.push(item.description)
@@ -78,7 +78,7 @@ const SearchBox: React.FC = () => {
             {isDropdownOpen && (
                 <div className="absolute z-10 w-full bg-white border border-gray-300 rounded-lg shadow-lg mt-1">
                     <div className='bg-slate-200 px-4 py-1.5 font-medium text-sm'>Quick actions</div>
-                    {suggestions.map((suggestion, idx) => (
+                    {suggestions.map((suggestion) => (
                         <div key={suggestion} className='flex items-center px-7 py-5 hover:bg-gray-200 cursor-pointer'>
                             <div className='pr-7 text-blue-500'><LocalMallOutlinedIcon/></div>
                             <div>

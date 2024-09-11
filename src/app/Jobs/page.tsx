@@ -2,7 +2,6 @@
 import DropdownWithCheckboxes from "@/components/Jobs/dropdown";
 import Job from "@/components/Jobs/Job";
 import JobsHeader from "@/components/Jobs/JobsHeader";
-import SearchJobs from "@/components/Jobs/SearchJobs";
 import { jobsfilter } from "@/data/jobsfilter";
 import { useState } from "react";
 const jobData = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,161,71,8,19,20,21,22,23,24,25]

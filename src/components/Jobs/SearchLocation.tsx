@@ -8,7 +8,7 @@ import ChairRoundedIcon from '@mui/icons-material/ChairRounded';
 
 const SearchLocation: React.FC = () => {
     
-    let allSuggestions : string[] = ["Current Location", "Everytwhere", "Remote"];
+    const allSuggestions : string[] = ["Current Location", "Everytwhere", "Remote"];
     // let allDescriptions:string[] = [];
     // menuList.map((item) => {
     //     allSuggestions.push(item.title)

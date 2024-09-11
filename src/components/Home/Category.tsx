@@ -12,7 +12,7 @@ const Category = () => {
         <>
             <div className="w-full mt-1">
                 {/* <div className='bg-slate-200 px-4 py-1.5 font-medium text-sm'>Quick actions</div> */}
-                {menuList.map((item, idx) => (
+                {menuList.map((item) => (
                     <div key={item.id} className='flex items-center px-14 py-5 hover:bg-gray-200 cursor-pointer justify-between'>
                         <div className='flex items-center'>
                             <div className='mr-7 text-blue-500 border rounded-lg p-2'>
