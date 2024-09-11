@@ -19,7 +19,7 @@ const DropdownWithCheckboxes = ({ title, content }:{title:string, content:string
             <Dropdown>
                 <DropdownTrigger>
                     <div className="flex flex-row items-center">
-                        <button className="bg-slate-200 border text-slate-600 text-sm px-4 py-3 rounded-full cursor-pointer ring-purple-600 relative shadow flex flex-nowrap gap-2 items-center">
+                        <button className="bg-slate-200 border text-slate-600 text-sm px-4 py-2 rounded-full cursor-pointer ring-purple-600 relative shadow flex flex-nowrap gap-2 items-center">
                             <p>{title}</p>
                             {selectedItems.length > 0 && (
                                 <span className=" bg-blue-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">

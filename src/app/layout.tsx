@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import React from "react"
 import Navbar from "@/components/Navbar/Navbar";
+import BottomNav from "@/components/Navbar/BottomNav";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -31,7 +32,8 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Navbar/>
+        <div><Navbar/></div>
+        <div className="fixed bottom-0 w-screen z-20 md:hidden "><BottomNav/></div>
         {children}
       </body>
     </html>

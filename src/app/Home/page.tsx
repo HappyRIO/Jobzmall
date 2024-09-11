@@ -8,6 +8,9 @@ import AvatarGroup from '@mui/material/AvatarGroup';
 
 import Story from "@/components/Home/Story";
 import CircularWithValueLabel from '@/components/Home/Progress';
+import View from '@/components/Home/View';
+import ProgressSM from '@/components/Home/ProgressSM';
+import Category from '@/components/Home/Category';
 
 export default function Home() {
   const [ , setProgress] = React.useState(0);
@@ -24,10 +27,11 @@ export default function Home() {
     return (
       <>
         <Header/>
-        <div className="px-2 pt-6 pb-10 pl-20 bg-[#F1F5F9]">
-          <div className=" grid grid-cols-8 px-8 gap-8">
+        <div className="md:px-2 md:pt-6 pb-10 md:pl-20 bg-[#F1F5F9]">
+        <div className=''><View/></div>
+          <div className="md:grid md:grid-cols-8 px-8 gap-8">
             <div className="flex flex-col relative md:col-span-3 lg:col-span-2">
-              <div className="flex flex-col items-center bg-white mt-[44px] rounded-xl">
+              <div className="hidden md:flex md:flex-col items-center bg-white mt-[44px] rounded-xl">
                 <Image className="absolute -translate-y-1/2 rounded-t-xl h-[88px] w-full shadow-md" src={"/7.jpg"} alt="" width={261} height={88}/>
                 <div className="flex w-[76px] h-[76px] rounded-full text-gray-600 bg-gray-200 text-2xl text-center items-center z-10"><p className="w-full">Y</p></div>
                 <div className="flex flex-col px-4 pb-4 pt-2 items-center space-y-4">
@@ -52,48 +56,58 @@ export default function Home() {
                 </div>
                 <div className="text-[#9333EA] font-bold text-sm px-4 py-6">My Profile</div>
               </div>
-              <div className='hidden md:flex '>
+              {/* <div className='hidden md:flex '>
 
-              </div>
+              </div> */}
             </div>
             {/* middle */}
             <div className="flex flex-col lg:col-span-4 md:col-span-5">
               <div className="flex bg-gray-900 p-6 rounded-xl">
                 <div className="flex flex-col pr-1.5">
-                  <div className="text-white font-medium text-xl">Fill your Profile</div>
-                  <div className="text-gray-300 text-sm">Fill out your profile so you can maximize your visibility to potential employers and recruiters. Shine both like a diamond!</div>
-                  <button className="bg-white text-gray-900 text-semibold text-sm w-fit px-4 py-2.5 mt-6 cursor-pointer rounded-md">Fill your Profile →</button>
+                  <div className="text-white font-medium md:text-xl text-lg">Fill your Profile</div>
+                  <div className="text-gray-300 md:text-sm text-[13px]">Fill out your profile so you can maximize your visibility to potential employers and recruiters. Shine both like a diamond!</div>
+                  <div className='flex justify-between items-center'>
+                    <button className="bg-white text-gray-900 text-semibold text-sm w-fit h-fit px-4 py-2.5 mt-6 cursor-pointer rounded-md">Fill your Profile →</button>
+                    <div className="hidden max-md:flex w-[100px] h-full items-center justify-center mt-6">
+                        <div className='absolute rounded-full border-[3px] w-10 h-10 border-[#6b21a8]'></div>
+                        <ProgressSM/>
+                    </div>
+                  </div>
                 </div>
-                <div className="flex w-[200px] h-full items-center justify-center">
+                <div className="hidden md:flex w-[200px] h-full items-center justify-center">
                   <div className='absolute rounded-full border-8 w-20 h-20 border-[#6b21a8]'></div>
-                  <CircularWithValueLabel/>
-                  {/* <CircularProgressCountUp/> */}
-                </div>
+                    <CircularWithValueLabel/>
+                  </div>
               </div>
-              <div className="flex bg-gray-900 p-6 rounded-xl mt-6">
-                <div className="flex flex-col w-1/2">
-                  <div className="text-white font-medium text-xl">Need a career companion?</div>
-                  <div className="text-gray-300 text-sm">Our coached will guide you through every step and help you find a job you love. Let&apos;s build your career together.</div>
-                  <button className="bg-white text-gray-900 text-semibold text-sm w-fit px-4 py-2.5 mt-6 cursor-pointer rounded-md">Connect with a Coach →</button>
+              <div className='max-md:block hidden'><Category/></div>
+              <div className="flex flex-col bg-gray-900 p-6 rounded-xl mt-6">
+                <div className='flex md:flex-row flex-col-reverse'>
+                  <div className="flex flex-col md:w-1/2">
+                    <div className="text-white font-medium text-xl">Need a career companion?</div>
+                    <div className="text-gray-300 text-sm">Our coached will guide you through every step and help you find a job you love. Let&apos;s build your career together.</div>
+                  </div>
+                  <div className="flex justify-center items-center md:w-1/2">
+                    <AvatarGroup max={3}>
+                      <Avatar sx={{ width: {md: 80, sm: 64}, height: {md: 80, sm: 64}, border: '5 !important', borderColor: 'black !important' }} alt="Remy Sharp" src="/image/avatar/hugo.png" />
+                      <Avatar sx={{ width: {md: 80, sm: 64}, height: {md: 80, sm: 64}, borderWidth: 4, borderColor: 'black !important' }} alt="Travis Howard" src="/image/avatar/ashley.png" />
+                      <Avatar sx={{ width: {md: 80, sm: 64}, height: {md: 80, sm: 64}, borderColor: 'black !important'}} alt="Cindy Baker" src="/image/avatar/coach.png" />
+                    </AvatarGroup>
+                  </div>
                 </div>
-                <div className="flex justify-center items-center w-1/2">
-                  <AvatarGroup max={3}>
-                    <Avatar sx={{ width: 80, height: 80, border: '5 !important', borderColor: 'black !important' }} alt="Remy Sharp" src="/image/avatar/hugo.png" />
-                    <Avatar sx={{ width: 80, height: 80, borderWidth: 4, borderColor: 'black !important' }} alt="Travis Howard" src="/image/avatar/ashley.png" />
-                    <Avatar sx={{ width: 80, height: 80, borderColor: 'black !important'}} alt="Cindy Baker" src="/image/avatar/coach.png" />
-                  </AvatarGroup>
-                </div>
+                <button className="bg-white text-gray-900 text-semibold text-sm w-fit px-4 py-2.5 mt-6 cursor-pointer rounded-md">Connect with a Coach →</button>
               </div>
               <div className="py-2"></div>
-              <div className="flex flex-col mb-4">
-                <div className="flex flex-col items-center">
-                  <h2 className="h-[48px] w-full text-center bg-gradient-to-r from-fuchsia-400 via-violet-400 to-purple-500 bg-clip-text text-transparent max-w-2xl text-4xl font-medium tracking-tight "> Inspire and Be Inspired </h2>
-                  <p className="text-center max-w-xl mb-4 text-lg leading-6 ng-tns-c331-582"> Explore the #1 video talent marketplace featuring publicly shared stories. Watch editor-picked video resumes from professionals who&apos;ve chosen to inspire others with their career journeys. </p>
-                  <a className="flex space-x-1 items-center text-[#9333EA] font-semibold dark:text-primary-400 hover:underline text-center text-base" href="/video-resume-studio/questionnaire"><span className="">Share Your Story →</span></a>
+              <div className='hidden md:block'>
+                <div className="flex flex-col mb-4">
+                  <div className="flex flex-col items-center">
+                    <h2 className="h-[48px] w-full text-center bg-gradient-to-r from-fuchsia-400 via-violet-400 to-purple-500 bg-clip-text text-transparent max-w-2xl text-4xl font-medium tracking-tight "> Inspire and Be Inspired </h2>
+                    <p className="text-center max-w-xl mb-4 text-lg leading-6 ng-tns-c331-582"> Explore the #1 video talent marketplace featuring publicly shared stories. Watch editor-picked video resumes from professionals who&apos;ve chosen to inspire others with their career journeys. </p>
+                    <a className="flex space-x-1 items-center text-[#9333EA] font-semibold dark:text-primary-400 hover:underline text-center text-base" href="/video-resume-studio/questionnaire"><span className="">Share Your Story →</span></a>
+                  </div>
                 </div>
+                <Story/>
+                <Story/>
               </div>
-              <Story/>
-              <Story/>
             </div>
             <div className="lg:flex flex-col lg:col-span-2 hidden space-y-4">
               <div className="flex flex-col p-6 bg-white rounded-xl">

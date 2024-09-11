@@ -113,6 +113,7 @@ export default function MiniDrawer() {
   };
 
   return (
+    <div className='hidden md:block'>
     <Box sx={{ display: 'flex', width: 80 }}>
       <Drawer sx={{ width: 80 }} variant="permanent" open={open}>
         <DrawerHeader sx={{ width: 80 }}>
@@ -183,5 +184,6 @@ export default function MiniDrawer() {
       </Drawer>
       
     </Box>
+    </div>
   );
 }

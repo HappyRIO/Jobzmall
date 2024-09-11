@@ -2,8 +2,6 @@
 import React, { useState } from "react"
 import Image from "next/image";
 
-// import HeaderDropdown from "./Dropdown";
-import HomeHeaderdropdown from "./HomeHeaderdropdown";
 import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
 import Menu from '@mui/material/Menu';
@@ -11,10 +9,7 @@ import MenuItem from '@mui/material/MenuItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
-// import Typography from '@mui/material/Typography';
 import Tooltip from '@mui/material/Tooltip';
-// import PersonAdd from '@mui/icons-material/PersonAdd';
-// import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
 
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
@@ -22,12 +17,18 @@ import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import BrushOutlinedIcon from '@mui/icons-material/BrushOutlined';
 import CampaignOutlinedIcon from '@mui/icons-material/CampaignOutlined';
 import MapsUgcOutlinedIcon from '@mui/icons-material/MapsUgcOutlined';
-import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
-import Notification from "./Notification";
-import Message from "./Message";
-import SearchBox from "./SearchBox";
+import Message from "../Header/Message";
+import Notification from "../Header/Notification";
+import NavTabs from "./Tab";
+import SearchBox from "../Header/SearchBox";
+import SearchJobs from "./SearchJobs";
+import SearchLocation from "./SearchLocation";
 
-export default function Header() {
+interface ChildProps {
+  setFilter : React.Dispatch<React.SetStateAction<string>>;
+}
+
+const JobsHeader: React.FC<ChildProps> = ({setFilter}) => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -43,22 +44,20 @@ export default function Header() {
 
   return (
     <>
-      <div className="flex justify-between items-center mx-auto 1md:block md:pl-16 px-8 h-[76px] gap-8 bg-white">
+    <div className="flex flex-col 1items-center justify-center px-5">
+      <div className="flex justify-between items-center md:pl-16 md:px-8 h-[76px] gap-8">
         <div className="">
-          <Image className="min-w-[180px] max-w-48" src={"/logo.png"} alt="" width={320} height={200} />
+          <Image className="min-w-[180px] max-w-44 max-h-[76px]" src={"/logo.png"} alt="" width={320} height={150} />
         </div>
-        <div className="hidden md:flex w-full relative">
-              {/* <SearchOutlinedIcon className="absolute pl-2 top-1/2 text-3xl 1translate-x-1/2 -translate-y-1/2" /> */}
-              {/* <input className="flex w-full p-2 pl-10  rounded-full bg-gray-200 outline-blue-200 outline-8" aria-autocomplete="both" aria-labelledby="autocomplete-17-label" id="autocomplete-17-input" placeholder="Search jobs, companies, and more..." type="search"></input> */}
-              <SearchBox/>
+        <div className="flex max-md:flex-col w-full relative gap-3 max-md:absolute max-md:top-32 max-md:px-4 max-md:mt-4 max-md:pr-10">
+              <div className="relative md:w-1/2"><SearchJobs setFilter={setFilter}/></div>
+              <div className="relative md:w-1/2"><SearchLocation /></div>   
         </div>
         <div className="flex items-center justify-end pl-2 ml-auto space-x-2 xl:col-span-1">
-          <div className="hidden lg:block"><HomeHeaderdropdown/></div>
           <div className="z-10"></div>
           <Message mOpen={mOpen} isMOpen={isMOpen}/>
-          <div className="cursor-pointer md:block hidden" onClick={() => handleMessage()}><MapsUgcOutlinedIcon/></div>
-          <div className="md:block hidden"><Notification/></div>
-          <div className="cursor-pointer md:hidden block"><SearchOutlinedIcon/></div>
+          <div className="cursor-pointer" onClick={() => handleMessage()}><MapsUgcOutlinedIcon/></div>
+          <Notification/>
           {/* ----------------account -------------------- */}
           <div className="flex w-8 h-8 justify-center">
             <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
@@ -141,6 +140,13 @@ export default function Header() {
           </div>
         </div>
       </div>
+      <div className="flex justify-center self-center">
+        <NavTabs/>
+      </div>
+      </div>
     </>
   );
 }
+
+
+export default JobsHeader;
