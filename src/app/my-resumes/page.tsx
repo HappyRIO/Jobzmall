@@ -9,7 +9,7 @@ import Image from "next/image";
 export default function MyResumes() {
   return (
     <>
-      <div className="flex flex-col flex-aut0">
+      <div className="flex flex-col flex-auto h-screen">
         <div className="relative px-4 py-8 overflow-hidden bg-gray-800 flex-0 sm:p-16 dark">
           <svg
             viewBox="0 0 960 540"
@@ -22,7 +22,7 @@ export default function MyResumes() {
             <g
               fill="none"
               stroke="currentColor"
-              stroke-width="100"
+              strokeWidth="100"
               className="text-gray-700 opacity-25"
             >
               <circle r="234" cx="196" cy="23"></circle>
@@ -56,7 +56,7 @@ export default function MyResumes() {
             <UploadResume/>
             {/* <ResumeButton /> */}
           </div>
-          <div className="flex flex-col items-center justify-center flex-autodark:bg-transparent">
+          <div className="flex flex-col h-full items-center justify-center flex-autodark:bg-transparent">
             <Image className="mt-6 w-50" src={"/image/resume.png"} alt="" width={200} height={132}/>
             <div className="mb-6 text-2xl font-semibold tracking-tight text-[#737373]">Your uploaded resumes will appear here</div>
           </div>

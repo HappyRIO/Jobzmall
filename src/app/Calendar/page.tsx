@@ -66,7 +66,7 @@ const Calendar = () => {
                 </div>
                 <div className='flex flex-col mt-8 text-center sm:mt-0 sm:pl-4 md:mb-5'>
                   <div className='mb-4 text-lg ffont-light text-left'>
-                    <div className='text-[#262626] text-base'><b>Thursday,{" "}</b>September 12</div>
+                    <div className='text-[#262626] text-base'><b>Saterday,{" "}</b>September 14</div>
                     {/* <div className='text-[#262626] text-base'></div> */}
                   </div>
                   <div className='grid flex-grow grid-cols-1 sm:grid-cols-2 sm:gap-x-2 overflow-y-auto sm:block md:h-[364px] items-center mt-20'>
