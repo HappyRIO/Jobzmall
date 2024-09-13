@@ -4,38 +4,39 @@ import Image from "next/image";
 
 // import HeaderDropdown from "./Dropdown";
 import HomeHeaderdropdown from "./HomeHeaderdropdown";
-import Box from '@mui/material/Box';
-import Avatar from '@mui/material/Avatar';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import Divider from '@mui/material/Divider';
-import IconButton from '@mui/material/IconButton';
-// import Typography from '@mui/material/Typography';
-import Tooltip from '@mui/material/Tooltip';
-// import PersonAdd from '@mui/icons-material/PersonAdd';
-// import Settings from '@mui/icons-material/Settings';
-import Logout from '@mui/icons-material/Logout';
+// import Box from '@mui/material/Box';
+// import Avatar from '@mui/material/Avatar';
+// import Menu from '@mui/material/Menu';
+// import MenuItem from '@mui/material/MenuItem';
+// import ListItemIcon from '@mui/material/ListItemIcon';
+// import Divider from '@mui/material/Divider';
+// import IconButton from '@mui/material/IconButton';
+// // import Typography from '@mui/material/Typography';
+// import Tooltip from '@mui/material/Tooltip';
+// // import PersonAdd from '@mui/icons-material/PersonAdd';
+// // import Settings from '@mui/icons-material/Settings';
+// import Logout from '@mui/icons-material/Logout';
 
-import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
-import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
-import BrushOutlinedIcon from '@mui/icons-material/BrushOutlined';
-import CampaignOutlinedIcon from '@mui/icons-material/CampaignOutlined';
+// import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
+// import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
+// import BrushOutlinedIcon from '@mui/icons-material/BrushOutlined';
+// import CampaignOutlinedIcon from '@mui/icons-material/CampaignOutlined';
 import MapsUgcOutlinedIcon from '@mui/icons-material/MapsUgcOutlined';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import Notification from "./Notification";
 import Message from "./Message";
 import SearchBox from "./SearchBox";
+import Account from "./Account";
 
 export default function Header() {
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+  // const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  // const open = Boolean(anchorEl);
+  // const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+  //   setAnchorEl(event.currentTarget);
+  // };
+  // const handleClose = () => {
+  //   setAnchorEl(null);
+  // };
   const [ mOpen, isMOpen ] = useState(false);
   const handleMessage = () => {
     isMOpen(!mOpen)
@@ -59,8 +60,9 @@ export default function Header() {
           <div className="cursor-pointer md:block hidden" onClick={() => handleMessage()}><MapsUgcOutlinedIcon/></div>
           <div className="md:block hidden"><Notification/></div>
           <div className="cursor-pointer md:hidden block"><SearchOutlinedIcon/></div>
+          <Account/>
           {/* ----------------account -------------------- */}
-          <div className="flex w-8 h-8 justify-center">
+          {/* <div className="flex w-8 h-8 justify-center">
             <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
               <Tooltip title="Account settings">
                 <IconButton
@@ -138,7 +140,7 @@ export default function Header() {
                 <p className="text-sm">Sign out</p>
               </MenuItem>
             </Menu>
-          </div>
+          </div> */}
         </div>
       </div>
     </>

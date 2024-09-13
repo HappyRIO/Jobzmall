@@ -1,5 +1,6 @@
 
-import Home from "./Home/page";
+import Home from "./home/page";
+
 
 export default function Jobzmall() {
   return (

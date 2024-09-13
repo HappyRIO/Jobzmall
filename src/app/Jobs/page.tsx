@@ -1,12 +1,18 @@
 "use client"
 import DropdownWithCheckboxes from "@/components/Jobs/dropdown";
 import Job from "@/components/Jobs/Job";
+import JobModal from "@/components/Jobs/jobModal";
 import JobsHeader from "@/components/Jobs/JobsHeader";
+import AppNav from "@/components/Navbar/AppNav";
 import { jobsfilter } from "@/data/jobsfilter";
 import { useState } from "react";
 const jobData = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,161,71,8,19,20,21,22,23,24,25]
 export default function Jobs () {
     const [ filter, setFilter ] = useState("max-md:hidden");
+    const [isClose, setIsClose] = useState(false)
+    const handlemodal = () => {
+        setIsClose(true)
+    }
 
     return(
         <>  
@@ -22,11 +28,13 @@ export default function Jobs () {
                     </div>
                     <div className="grid lg:grid-cols-4 md:grid-cols-3 p-4 my-10 gap-x-4 gap-y-8 max-md:w-full">
                         {jobData.map((item) => (
-                            <Job key={item}/>
+                            <div key={item} onClick={handlemodal}><Job/></div>
                         ))}
                     </div>
                 </div>
             </div>
+            <AppNav/>
+            {isClose && <JobModal setIsClose={setIsClose}/>}
         </>
     )
 

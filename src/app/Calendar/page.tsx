@@ -8,6 +8,7 @@ import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
 import InboxOutlinedIcon from '@mui/icons-material/InboxOutlined';
 
 import Header from "@/components/Header/Header";
+import AppNav from '@/components/Navbar/AppNav';
 
 const Calendar = () => {
   return (
@@ -80,6 +81,7 @@ const Calendar = () => {
           </div>
         </div>
       </div>
+      <AppNav/>
     </>
   );
 };

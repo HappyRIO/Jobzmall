@@ -18,6 +18,8 @@
     "@nextui-org/dropdown": "^2.1.29",
     "@nextui-org/input": "^2.2.4",
     "@nextui-org/react": "^2.4.6",
+    "@react-google-maps/api": "^2.19.3",
+    "date-fns": "^3.6.0",
     "dayjs": "^1.11.13",
     "next": "14.2.8",
     "react": "^18",
@@ -26,6 +28,7 @@
     "use-count-up": "^3.0.1"
   },
   "devDependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.2",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

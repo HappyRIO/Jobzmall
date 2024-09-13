@@ -11,6 +11,7 @@ import CircularWithValueLabel from '@/components/Home/Progress';
 import View from '@/components/Home/View';
 import ProgressSM from '@/components/Home/ProgressSM';
 import Category from '@/components/Home/Category';
+import AppNav from '@/components/Navbar/AppNav';
 
 export default function Home() {
   const [ , setProgress] = React.useState(0);
@@ -126,11 +127,12 @@ export default function Home() {
                   <div className="mt-5 text-[#262626] text-xl font-semibold text-nowrap">No applications</div>
                   <div className="w-full mt-1 text-[#737373] text-center max-w-60 text-[13px]">When you have applications, they will appear here.</div>
                 </div>
-                <div className="mt-6"><a className="block w-full px-4 py-2 text-xs font-medium text-center border border-gray-300 rounded-md shadow-sm text-[#737373] hover:bg-gray-50" href="/my-resumes">Find jobs</a></div>
+                <div className="mt-6"><a className="block w-full px-4 py-2 text-xs font-medium text-center border border-gray-300 rounded-md shadow-sm text-[#737373] hover:bg-gray-50" href="/Jobs">Find jobs</a></div>
               </div>
             </div>
           </div>
         </div>
+        <AppNav/>
       </>
     );
   }
