@@ -71,7 +71,6 @@ const Welcome: React.FC<ChildProps> = ({ setNext }) => {
               borderRadius: "999px",
               color: "white",
               backgroundColor: "#9333EA",
-              // padding: 1.5,
               textTransform: "none",
             }}
             className="p-3 px-8 text=sm mt-[26px]"
