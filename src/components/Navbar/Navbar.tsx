@@ -149,7 +149,7 @@ export default function MiniDrawer() {
                         size="lg"
                         color="primary"
                       >
-                        <div onClick={() => router.push("/jobs")}>
+                        <div onClick={() => router.push("/home")}>
                           <InboxOutlinedIcon />
                         </div>
                       </Tooltip>
